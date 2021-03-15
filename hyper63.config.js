@@ -14,7 +14,7 @@ const MINIO = `http://${process.env.USER}:${process.env.PASSWORD}@${process.env.
 export default {
   app: express,
   adapters: [
-    { port: 'data', plugins: [couchdb({url: COUCH })]},
+    { port: 'data', plugins: [ couchdb({url: COUCH })]},
     { port: 'cache', plugins: [redis({url: REDIS})]},
     { port: 'search', plugins: [es({url: ES})]},
     { port: 'storage', plugins: [minio({url: MINIO})]}
